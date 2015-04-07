@@ -1,9 +1,12 @@
-window.AwesomeShareButtons =
-  openUrl : (url) ->
-    window.open(url)
-    false
+window.SocialShareButton =
+  openUrl: (url, popup) ->
+    if popup == 'true'
+      window.open(url,'popup','height=500,width=500')
+    else
+      window.open(url)
+      false
 
-  share : (el) ->
+  share: (el) ->
     site = $(el).data('site')
     title = encodeURIComponent($(el).parent().data('title') || '')
     img = encodeURIComponent($(el).parent().data("img") || '')
@@ -11,19 +14,19 @@ window.AwesomeShareButtons =
     if url.length == 0
       url = encodeURIComponent(location.href)
     switch site
-      when "email"
+      when 'email'
         location.href = "mailto:?to=&subject=#{title}&body=#{url}"
-      when "twitter"
+      when 'twitter'
         AwesomeShareButtons.openUrl("https://twitter.com/home?status=#{title}: #{url}")
-      when "facebook"
+      when 'facebook'
         AwesomeShareButtons.openUrl("http://www.facebook.com/sharer.php?u=#{url}")
-      when "google_plus"
+      when 'google_plus'
         AwesomeShareButtons.openUrl("https://plus.google.com/share?url=#{url}")
-      when "delicious"
+      when 'delicious'
         AwesomeShareButtons.openUrl("http://www.delicious.com/save?url=#{url}&title=#{title}&jump=yes&pic=#{img}")
-      when "pinterest"
+      when 'pinterest'
         AwesomeShareButtons.openUrl("http://www.pinterest.com/pin/create/button/?url=#{url}&media=#{img}&description=#{title}")
-      when "tumblr"
+      when 'tumblr'
         get_tumblr_extra = (param) ->
           cutom_data = $(el).attr("data-#{param}")
           encodeURIComponent(cutom_data) if cutom_data
