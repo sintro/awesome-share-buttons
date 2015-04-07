@@ -3,7 +3,7 @@
 This gem makes it easy to add Font-Awesome social share buttons to your rails app.
 
 ## Context
-I fork this gem to add the popup option to share a page (I don't know why the author disabled it)
+I forked this gem to add the popup option to share a page (I don't know why the author disabled it)
 
 ## Sites list
 
@@ -15,10 +15,6 @@ I fork this gem to add the popup option to share a page (I don't know why the au
 * Pinterest
 * Email
 
-## Screenshot
-
-coming soon
-
 ## Install
 
 In your `Gemfile`:
@@ -29,7 +25,7 @@ gem 'awesome-share-buttons', github: 'anthony-robin/awesome-share-buttons'
 
 And install it:
 
-```bash
+```shell
 $ bundle install
 $ rails generate awesome_share_buttons:install
 ```
@@ -50,14 +46,14 @@ You need add require lines to your css and js files in your app assets files:
 
 `app/assets/javascripts/application.coffee`
 
-```
+```coffee
 #= require awesome-share-buttons
 ```
 
 `app/assets/stylesheets/application.scss`
 
-```
-@import awesome-share-buttons
+```sass
+@import awesome-share-buttons;
 ```
 
 Then you can use `awesome_share_buttons` method helper in views, for example `app/views/posts/show.html.erb`
@@ -85,10 +81,17 @@ I you want to open it in popup, just add:
 ```
 
 
-For the Tumblr there are an extra settings, prefixed with :'data-*'
+For the Tumblr there are an extra settings, prefixed with `data-*`  `
 ```erb
-<%= awesome_share_buttons(@post.title, :image => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
-<%= awesome_share_buttons(@post.title, :'data-source' => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
+<%= awesome_share_buttons @post.title, 
+                          image:  'your-image.jpg', 
+                          'data-type' => 'photo'
+%>
+
+<%= awesome_share_buttons @post.title,
+                          'data-source' => 'your-image.jpg',
+                          'data-type' => 'photo'
+%>
 ```
 Those two above calls are identical.
 Here are the mapping of attributes depending on you data-type parameter
