@@ -9,24 +9,29 @@ $(document).on 'ready page:load page:restore', ->
 
     share: (el) ->
       site = $(el).data('site')
-      title = encodeURIComponent($(el).parent().data('title') || '')
-      img = encodeURIComponent($(el).parent().data("img") || '')
-      url = encodeURIComponent($(el).parent().data("url") || '')
+      $parent = $(el).parent()
+      title = encodeURIComponent($parent.data('title') || '')
+      img = encodeURIComponent($parent.data('img') || '')
+      url = encodeURIComponent($parent.data('url') || '')
+      via = encodeURIComponent($parent.data('via') || '')
+      desc = encodeURIComponent($parent.data('desc') || '')
+      popup = encodeURIComponent($parent.data('popup') || 'false')
+
       if url.length == 0
         url = encodeURIComponent(location.href)
       switch site
         when 'email'
           location.href = "mailto:?to=&subject=#{title}&body=#{url}"
         when 'twitter'
-          AwesomeShareButtons.openUrl("https://twitter.com/home?status=#{title}: #{url}")
+          AwesomeShareButtons.openUrl("https://twitter.com/home?status=#{title}: #{url}", popup)
         when 'facebook'
-          AwesomeShareButtons.openUrl("http://www.facebook.com/sharer.php?u=#{url}")
+          AwesomeShareButtons.openUrl("http://www.facebook.com/sharer.php?u=#{url}", popup)
         when 'google_plus'
-          AwesomeShareButtons.openUrl("https://plus.google.com/share?url=#{url}")
+          AwesomeShareButtons.openUrl("https://plus.google.com/share?url=#{url}", popup)
         when 'delicious'
-          AwesomeShareButtons.openUrl("http://www.delicious.com/save?url=#{url}&title=#{title}&jump=yes&pic=#{img}")
+          AwesomeShareButtons.openUrl("http://www.delicious.com/save?url=#{url}&title=#{title}&jump=yes&pic=#{img}", popup)
         when 'pinterest'
-          AwesomeShareButtons.openUrl("http://www.pinterest.com/pin/create/button/?url=#{url}&media=#{img}&description=#{title}")
+          AwesomeShareButtons.openUrl("http://www.pinterest.com/pin/create/button/?url=#{url}&media=#{img}&description=#{title}", popup)
         when 'tumblr'
           get_tumblr_extra = (param) ->
             cutom_data = $(el).attr("data-#{param}")
@@ -55,5 +60,5 @@ $(document).on 'ready page:load page:restore', ->
 
             "/#{path}?#{params}"
 
-          AwesomeShareButtons.openUrl("http://www.tumblr.com/share#{tumblr_params()}")
+          AwesomeShareButtons.openUrl("http://www.tumblr.com/share#{tumblr_params()}", popup)
       false
