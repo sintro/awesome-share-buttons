@@ -18,7 +18,7 @@ module AwesomeShareButtons
                                   title: h(link_title)}.merge(extra_data))
       end
       html << '</div>'
-      raw html.join('\n')
+      raw html.join("\n")
     end
 
     def get_icon(name)
