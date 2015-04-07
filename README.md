@@ -2,7 +2,10 @@
 
 This gem makes it easy to add Font-Awesome social share buttons to your rails app.
 
-# Sites list
+## Context
+I fork this gem to add the popup option to share a page (I don't know why the author disabled it)
+
+## Sites list
 
 * Facebook
 * Twitter
@@ -21,7 +24,7 @@ coming soon
 In your `Gemfile`:
 
 ```ruby
-gem 'awesome-share-buttons', github: 'evansobkowicz/awesome-share-buttons'
+gem 'awesome-share-buttons', github: 'anthony-robin/awesome-share-buttons'
 ```
 
 And install it:
@@ -54,7 +57,7 @@ You need add require lines to your css and js files in your app assets files:
 `app/assets/stylesheets/application.scss`
 
 ```
-*= require awesome-share-buttons
+@import awesome-share-buttons
 ```
 
 Then you can use `awesome_share_buttons` method helper in views, for example `app/views/posts/show.html.erb`
@@ -74,6 +77,13 @@ You can also specify the URL that it links to:
 ```erb
 <%= awesome_share_buttons(@post.title, :url => "http://myapp.com/foo/bar") %>
 ```
+
+I you want to open it in popup, just add:
+
+```erb
+<%= awesome_share_buttons(@post.title, popup: true) %>
+```
+
 
 For the Tumblr there are an extra settings, prefixed with :'data-*'
 ```erb
@@ -95,12 +105,8 @@ Here are the mapping of attributes depending on you data-type parameter
 |                   |           | data-source                |
 </pre>
 
-
-## Demo
-
-coming soon
-
 ## Thanks
 
+* Thanks to [evansobkowicz](https://github.com/evansobkowicz) for the code from 'awesome-share-button' that this fork is based on.
 * Thanks to [Jason Lee](https://github.com/huacnlee) for the code from 'social-share-button' that this plugin is based on.
 * Thanks to [Font Awesome](http://fontawesome.io/) for the awesome icons!
