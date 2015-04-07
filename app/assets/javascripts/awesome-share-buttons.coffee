@@ -1,4 +1,4 @@
-window.SocialShareButton =
+window.AwesomeShareButtons =
   openUrl: (url, popup) ->
     if popup == 'true'
       window.open(url,'popup','height=500,width=500')
