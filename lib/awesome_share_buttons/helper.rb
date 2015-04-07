@@ -1,12 +1,11 @@
 # coding: utf-8
 module AwesomeShareButtons
   module Helper
-
     def awesome_share_buttons(title = "", opts = {})
       extra_data = {}
       rel = opts[:rel]
       html = []
-      html << "<div class='awesome-share-buttons' data-title='#{h title}' data-img='#{opts[:image]}' data-url='#{opts[:url]}'>"
+      html << "<div class='awesome-share-buttons' data-title='#{h title}' data-img='#{opts[:image]}' data-url='#{opts[:url]}' data-popup='#{opts[:popup]}'>"
 
       AwesomeShareButtons.config.allow_sites.each do |name|
         extra_data = opts.select { |k, _| k.to_s.start_with?('data') } if name.eql?('tumblr')
@@ -41,6 +40,5 @@ module AwesomeShareButtons
         return name
       end
     end
-
   end
 end
