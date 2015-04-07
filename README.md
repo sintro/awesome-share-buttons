@@ -53,7 +53,7 @@ You need add require lines to your css and js files in your app assets files:
 `app/assets/stylesheets/application.scss`
 
 ```sass
-@import awesome-share-buttons;
+@import 'awesome-share-buttons';
 ```
 
 Then you can use `awesome_share_buttons` method helper in views, for example `app/views/posts/show.html.erb`
