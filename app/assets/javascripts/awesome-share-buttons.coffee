@@ -23,7 +23,8 @@ $(document).on 'ready page:load page:restore', ->
         when 'email'
           location.href = "mailto:?to=&subject=#{title}&body=#{url}"
         when 'twitter'
-          AwesomeShareButtons.openUrl("https://twitter.com/home?status=#{title}: #{url}", popup)
+          via_str = via.length > 0 ? "&via=#{via}" : ''
+          AwesomeShareButtons.openUrl("https://twitter.com/intent/tweet?url=#{url}&text=#{title}#{via_str}",popup)
         when 'facebook'
           AwesomeShareButtons.openUrl("http://www.facebook.com/sharer.php?u=#{url}", popup)
         when 'google_plus'
