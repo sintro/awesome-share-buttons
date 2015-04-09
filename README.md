@@ -108,6 +108,19 @@ Here are the mapping of attributes depending on you data-type parameter
 |                   |           | data-source                |
 </pre>
 
+## Use Foundation Tooltip
+If you want to had a Foundation tooltip on hover for each social network, you can setup a script like this:
+
+```coffee
+$a_tags = $('.awesome-share-buttons').find('a') # Fetch every social networks
+$a_tags.each (index, element) ->
+    $this = $(this)
+    title = $this.attr 'title'
+
+    $(element).wrap "<span class='tip-bottom' data-tooltip aria-hashpopup='true' title='#{title}'></span>" # Wrap the 'a' tag with a span
+$(document).foundation 'tooltip', 'reflow' # refresh tooltip plugin
+```
+
 ## Thanks
 
 * Thanks to [evansobkowicz](https://github.com/evansobkowicz) for the code from 'awesome-share-button' that this fork is based on.
