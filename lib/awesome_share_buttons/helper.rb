@@ -40,6 +40,8 @@ module AwesomeShareButtons
         return 'pinterest-square'
       elsif name == 'delicious'
         return 'delicious'
+      elsif name == 'vk'
+        return 'vk'
       else
         return name
       end

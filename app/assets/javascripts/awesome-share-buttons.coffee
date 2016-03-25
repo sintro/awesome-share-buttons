@@ -27,6 +27,8 @@ window.AwesomeShareButtons =
         AwesomeShareButtons.openUrl("https://twitter.com/intent/tweet?url=#{url}&text=#{title}#{via_str}",popup)
       when 'facebook'
         AwesomeShareButtons.openUrl("http://www.facebook.com/sharer.php?u=#{url}", popup)
+      when 'vk'
+        AwesomeShareButtons.openUrl("http://vk.com/share.php?url=#{url}", popup)
       when 'google_plus'
         AwesomeShareButtons.openUrl("https://plus.google.com/share?url=#{url}", popup)
       when 'delicious'
