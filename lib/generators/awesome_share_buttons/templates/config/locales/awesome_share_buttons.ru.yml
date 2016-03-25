@@ -1,0 +1,11 @@
+ru:
+  awesome_share_buttons:
+    share_to: Поделиться %{name}
+    twitter: в Twitter
+    vk: ВКонтакте
+    facebook: в Facebook
+    delicious: в Delicious
+    google_plus: в Google+
+    tumblr: в Tumblr
+    pinterest: в Pinterest
+    email: через Email
