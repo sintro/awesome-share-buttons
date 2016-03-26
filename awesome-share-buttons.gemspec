@@ -24,4 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rails"
   s.add_runtime_dependency "coffee-rails"
   s.add_runtime_dependency "sass-rails"
+  s.add_runtime_dependency "font-awesome-rails", ["~> 4.5.0"]		
 end
