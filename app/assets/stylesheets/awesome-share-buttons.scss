@@ -1,8 +1,4 @@
-/*
-*
-*= require font-awesome.min
-*
-*/
+//= require "font-awesome";
 
 /* OVERRIDE GEM */
 .awesome-share-buttons {
@@ -34,6 +30,18 @@
       color: #4c75a3;
       &:hover {
         color: #4c75a3;
+      }
+    }
+    &.awesome-share-buttons-tumblr {
+      color: #35465c;
+      &:hover {
+        color: #35465c;
+      }
+    }
+    &.awesome-share-buttons-pinterest {
+      color: #bd2125;
+      &:hover {
+        color: #bd2125;
       }
     }
   }
