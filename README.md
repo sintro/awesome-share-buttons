@@ -3,7 +3,7 @@
 This gem makes it easy to add Font-Awesome social share buttons to your rails app.
 
 ## Context
-I forked this gem to add the popup option to share a page (I don't know why the author disabled it)
+I forked this gem to add the VKontakte site, RU locale and separate Font-Awesome dependency. 
 
 ## Sites list
 
@@ -13,6 +13,7 @@ I forked this gem to add the popup option to share a page (I don't know why the 
 * Delicious
 * Tumblr
 * Pinterest
+* VKontakte
 * Email
 
 ## Install
@@ -53,6 +54,7 @@ You need add require lines to your css and js files in your app assets files:
 `app/assets/stylesheets/application.scss`
 
 ```sass
+@import 'font-awesome';
 @import 'awesome-share-buttons';
 ```
 
