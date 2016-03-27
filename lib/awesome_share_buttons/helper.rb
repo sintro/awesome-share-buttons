@@ -29,7 +29,7 @@ module AwesomeShareButtons
       extra_data = {}
       rel = opts[:rel]
       html = []
-      html << "<div class='awesome-social-buttons'>"
+      html << "<div class='awesome-social-pages'>"
 
       AwesomeShareButtons.config.social_pages.each do |name, url|
         link_title = t 'awesome_share_buttons.link_to', name: t("awesome_share_buttons.#{name.downcase}")
