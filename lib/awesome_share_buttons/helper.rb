@@ -32,6 +32,7 @@ module AwesomeShareButtons
       html << "<div class='awesome-social-pages'>"
 
       AwesomeShareButtons.config.social_pages.each do |name, url|
+        name = name.to_s
         link_title = t 'awesome_share_buttons.link_to', name: t("awesome_share_buttons.#{name.downcase}")
         html << link_to("<i class='fa fa-#{get_icon(name.downcase)}'></i>".html_safe, url, {
           class: "awesome-share-buttons-#{name}",
