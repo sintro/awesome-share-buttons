@@ -25,7 +25,7 @@ module AwesomeShareButtons
       raw html.join("\n")
     end
 
-    def awesome_social_buttons(opts = {})
+    def awesome_social_pages(opts = {})
       extra_data = {}
       rel = opts[:rel]
       html = []
