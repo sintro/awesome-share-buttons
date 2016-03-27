@@ -25,6 +25,24 @@ module AwesomeShareButtons
       raw html.join("\n")
     end
 
+    def awesome_social_buttons(opts = {})
+      extra_data = {}
+      rel = opts[:rel]
+      html = []
+      html << "<div class='awesome-social-buttons'>"
+
+      AwesomeShareButtons.config.social_pages.each do |name, url|
+        link_title = t 'awesome_share_buttons.link_to', name: t("awesome_share_buttons.#{name.downcase}")
+        html << link_to("<i class='fa fa-#{get_icon(name.downcase)}'></i>".html_safe, url, {
+          class: "awesome-share-buttons-#{name}",
+          title: h(link_title)
+        }.merge(extra_data))
+      end
+
+      html << '</div>'
+      raw html.join("\n")
+    end
+
     def get_icon(name)
       if name == 'google_plus'
         return 'google-plus-square'

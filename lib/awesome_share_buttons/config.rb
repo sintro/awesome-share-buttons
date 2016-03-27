@@ -10,7 +10,7 @@ module AwesomeShareButtons
     # enable social sites to share,
     # * default : twitter facebook weibo douban
     # * site support: twitter facebook weibo douban
-    attr_accessor :allow_sites
+    attr_accessor :allow_sites, :social_pages
 
     def initialize
     end

@@ -1,6 +1,7 @@
 en:
   awesome_share_buttons:
     share_to: Share to %{name}
+    share_to: We are at %{name}
     twitter: Twitter
     vk: VKontakte
     facebook: Facebook
