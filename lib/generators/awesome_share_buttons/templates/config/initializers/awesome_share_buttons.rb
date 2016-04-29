@@ -7,6 +7,7 @@ AwesomeShareButtons.configure do |config|
   	delicious: '',
   	tumblr: '',
   	pinterest: '',
-  	vk: ''
+    vk: '',
+  	rss: ''
   }
 end

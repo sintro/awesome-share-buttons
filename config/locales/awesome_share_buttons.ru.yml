@@ -2,6 +2,7 @@ ru:
   awesome_share_buttons:
     share_to: Поделиться %{name}
     link_to: Наша страница %{name}
+    rss_feed: Лента RSS
     twitter: в Twitter
     vk: ВКонтакте
     facebook: в Facebook

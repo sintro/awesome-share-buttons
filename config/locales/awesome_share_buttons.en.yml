@@ -2,6 +2,7 @@ en:
   awesome_share_buttons:
     share_to: Share to %{name}
     link_to: We are at %{name}
+    rss_feed: RSS Feed
     twitter: Twitter
     vk: VKontakte
     facebook: Facebook

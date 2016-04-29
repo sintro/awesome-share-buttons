@@ -33,7 +33,11 @@ module AwesomeShareButtons
 
       AwesomeShareButtons.config.social_pages.each do |name, url|
         name = name.to_s
-        link_title = t 'awesome_share_buttons.link_to', name: t("awesome_share_buttons.#{name.downcase}")
+        if name == 'rss'
+          link_title = t 'awesome_share_buttons.rss_feed'
+        else
+          link_title = t 'awesome_share_buttons.link_to', name: t("awesome_share_buttons.#{name.downcase}")
+        end
         html << link_to("<i class='fa fa-#{get_icon(name.downcase)}'></i>".html_safe, url, {
           class: "awesome-share-buttons-#{name}",
           title: h(link_title)
@@ -61,6 +65,8 @@ module AwesomeShareButtons
         return 'delicious'
       elsif name == 'vk'
         return 'vk'
+      elsif name == 'rss'
+        return 'rss'
       else
         return name
       end
