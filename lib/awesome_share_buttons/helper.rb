@@ -49,26 +49,29 @@ module AwesomeShareButtons
     end
 
     def get_icon(name)
-      if name == 'google_plus'
-        return 'google-plus-square'
-      elsif name == 'email'
-        return 'envelope-square'
-      elsif name == 'facebook'
-        return 'facebook-square'
-      elsif name == 'twitter'
-        return 'twitter-square'
-      elsif name == 'tumblr'
-        return 'tumblr-square'
-      elsif name == 'pinterest'
-        return 'pinterest-square'
-      elsif name == 'delicious'
-        return 'delicious'
-      elsif name == 'vk'
-        return 'vk'
-      elsif name == 'rss'
-        return 'rss'
-      else
-        return name
+      case name
+        when 'google_plus'
+          'google-plus-square'
+        when 'email'
+          'envelope-square'
+        when 'facebook'
+          'facebook-square'
+        when 'twitter'
+          'twitter-square'
+        when 'tumblr'
+          'tumblr-square'
+        when 'pinterest'
+          'pinterest-square'
+        when 'delicious'
+          'delicious'
+        when 'vk'
+          'vk'
+        when 'rss'
+          'rss-square'        
+        when 'youtube'
+          'youtube-square'
+        else
+          name
       end
     end
   end
